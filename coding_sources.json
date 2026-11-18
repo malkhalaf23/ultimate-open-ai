@@ -1,0 +1,10 @@
+[
+ {"repository":"microsoft/TypeScript","provider":"Microsoft","license":"Apache-2.0","license_file":"LICENSE.txt","license_marker":"Apache License","files":["README.md","CONTRIBUTING.md"]},
+ {"repository":"microsoft/vscode","provider":"Microsoft","license":"MIT","license_file":"LICENSE.txt","license_marker":"MIT License","files":["README.md","src/vs/base/common/arrays.ts","src/vs/base/test/common/arrays.test.ts"]},
+ {"repository":"google/styleguide","provider":"Google","license":"CC-BY-3.0","license_file":"LICENSE","license_marker":"Attribution 3.0 Unported","files":["README.md","pyguide.md","jsguide.md","tsguide.md"]},
+ {"repository":"swiftlang/swift-book","provider":"Apple / Swift project","license":"Apache-2.0","license_file":"LICENSE.txt","license_marker":"Apache License","files":["README.md","Style.md","TSPL.docc/LanguageGuide/TheBasics.md","TSPL.docc/LanguageGuide/Functions.md"]},
+ {"repository":"react/react","provider":"Meta / React project","license":"MIT","license_file":"LICENSE","license_marker":"MIT License","files":["README.md","packages/react/src/ReactHooks.js","packages/react/src/ReactChildren.js","packages/react/src/__tests__/ReactCreateElement-test.js"]},
+ {"repository":"aws/aws-sdk-js-v3","provider":"Amazon Web Services","license":"Apache-2.0","license_file":"LICENSE","license_marker":"Apache License","files":["README.md","UPGRADING.md","lib/lib-dynamodb/README.md","lib/lib-dynamodb/src/commands/PutCommand.ts"]},
+ {"repository":"openai/openai-python","provider":"OpenAI","license":"Apache-2.0","license_file":"LICENSE","license_marker":"Apache License","files":["README.md","src/openai/_utils/_utils.py","src/openai/_streaming.py","tests/test_transform.py"]},
+ {"repository":"golang/go","provider":"Google / Go project","license":"BSD-3-Clause","license_file":"LICENSE","license_marker":"Redistribution and use in source and binary forms","files":["README.md","src/slices/slices.go","src/slices/slices_test.go","src/slices/sort.go"]}
+]

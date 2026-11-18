@@ -1,0 +1,304 @@
+{
+  "state": "accepted",
+  "reasons": [],
+  "steps": 100,
+  "learning_rate": 1e-05,
+  "trainable_parameters": 77824,
+  "changed_tensors": 16,
+  "delta_l2": 0.4145473473342638,
+  "initial_sha256": "78e24bb06bce408d50534f51505c6602bc878f586f5aefaea25697be7fd78f77",
+  "trained_sha256": "249d9bc6666911476cab65d0ee7415c9a2cba1c993940e09a13bdfc076f8e9bf",
+  "before": {
+    "valid": 2.109371112740558,
+    "audit": 1.8028028296927612
+  },
+  "after": {
+    "valid": 2.096663609147072,
+    "audit": 1.7908765772978466
+  },
+  "coding_before": {
+    "passes": 7,
+    "count": 8,
+    "cases": [
+      {
+        "name": "dedupe",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def dedupe(lst):\n    seen = set()\n    result = []\n    for item in lst:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result"
+      },
+      {
+        "name": "is_prime",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def is_prime(n):\n    if n <= 1:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    for i in range(3, int(n**0.5) + 1, 2):\n        if n % i == 0:\n            return False\n    return True"
+      },
+      {
+        "name": "merge_intervals",
+        "passed": false,
+        "tests": [
+          false,
+          true,
+          false
+        ],
+        "error": null,
+        "code": "def merge_intervals(intervals):\n    intervals.sort()\n    merged = []\n    for interval in intervals:\n        if not merged or interval[0] > merged[-1][1]:\n            merged.append(interval)\n        else:\n            merged[-1][1] = max(merged[-1][1], interval[1])\n    return merged"
+      },
+      {
+        "name": "binary_search",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def binary_search(values, target):\n    low, high = 0, len(values) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if values[mid] == target:\n            return mid\n        elif values[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1"
+      },
+      {
+        "name": "count_words",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def count_words(text):\n    words = text.lower().split()\n    return {word: words.count(word) for word in set(words)}"
+      },
+      {
+        "name": "chunked",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def chunked(lst, size):\n    if size <= 0:\n        raise ValueError(\"Size must be greater than 0\")\n    return [lst[i:i+size] for i in range(0, len(lst), size)]"
+      },
+      {
+        "name": "balanced_parens",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def balanced_parens(text):\n    balance = 0\n    for char in text:\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n        if balance < 0:\n            return False\n    return balance == 0"
+      },
+      {
+        "name": "flatten_once",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def flatten_once(lst):\n    return [item for sublist in lst for item in sublist]"
+      }
+    ],
+    "scope": "Eight small Python acceptance programs in a restricted child, not broad multi-language correctness."
+  },
+  "coding_after": {
+    "passes": 7,
+    "count": 8,
+    "cases": [
+      {
+        "name": "dedupe",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def dedupe(lst):\n    seen = set()\n    result = []\n    for item in lst:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result"
+      },
+      {
+        "name": "is_prime",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def is_prime(n):\n    if n <= 1:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    for i in range(3, int(n**0.5) + 1, 2):\n        if n % i == 0:\n            return False\n    return True"
+      },
+      {
+        "name": "merge_intervals",
+        "passed": false,
+        "tests": [
+          false,
+          true,
+          false
+        ],
+        "error": null,
+        "code": "def merge_intervals(intervals):\n    intervals.sort()\n    merged = []\n    for interval in intervals:\n        if not merged or interval[0] > merged[-1][1]:\n            merged.append(interval)\n        else:\n            merged[-1][1] = max(merged[-1][1], interval[1])\n    return merged"
+      },
+      {
+        "name": "binary_search",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def binary_search(values, target):\n    low, high = 0, len(values) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if values[mid] == target:\n            return mid\n        elif values[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1"
+      },
+      {
+        "name": "count_words",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def count_words(text):\n    words = text.lower().split()\n    return {word: words.count(word) for word in set(words)}"
+      },
+      {
+        "name": "chunked",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def chunked(lst, size):\n    if size <= 0:\n        raise ValueError(\"Size must be greater than 0\")\n    return [lst[i:i+size] for i in range(0, len(lst), size)]"
+      },
+      {
+        "name": "balanced_parens",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def balanced_parens(text):\n    balance = 0\n    for char in text:\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n        if balance < 0:\n            return False\n    return balance == 0"
+      },
+      {
+        "name": "flatten_once",
+        "passed": true,
+        "tests": [
+          true,
+          true,
+          true
+        ],
+        "error": null,
+        "code": "def flatten_once(lst):\n    return [item for sublist in lst for item in sublist]"
+      }
+    ],
+    "scope": "Eight small Python acceptance programs in a restricted child, not broad multi-language correctness."
+  },
+  "history": [
+    {
+      "step": 10,
+      "train_loss": 1.5736901760101318,
+      "seconds": 8.333279290993232,
+      "training_tokens": 1280,
+      "active_gb": 0.8148073479533195,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 20,
+      "train_loss": 2.656221866607666,
+      "seconds": 15.979866624998976,
+      "training_tokens": 2560,
+      "active_gb": 0.8233657740056515,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 30,
+      "train_loss": 2.1998274326324463,
+      "seconds": 23.68770791598945,
+      "training_tokens": 3840,
+      "active_gb": 0.8176245428621769,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 40,
+      "train_loss": 1.2802399396896362,
+      "seconds": 31.58690258298884,
+      "training_tokens": 5120,
+      "active_gb": 0.814872220158577,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 50,
+      "train_loss": 1.578072428703308,
+      "seconds": 39.63193537500047,
+      "training_tokens": 6400,
+      "active_gb": 0.8165239952504635,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 60,
+      "train_loss": 1.0579924583435059,
+      "seconds": 47.62513966599363,
+      "training_tokens": 7680,
+      "active_gb": 0.825629822909832,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 70,
+      "train_loss": 1.0073784589767456,
+      "seconds": 55.154051665987936,
+      "training_tokens": 8960,
+      "active_gb": 0.8241001106798649,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 80,
+      "train_loss": 2.6544246673583984,
+      "seconds": 62.769314915989526,
+      "training_tokens": 10240,
+      "active_gb": 0.8185172043740749,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 90,
+      "train_loss": 1.2953596115112305,
+      "seconds": 70.06060841599538,
+      "training_tokens": 11520,
+      "active_gb": 0.8216758221387863,
+      "peak_gb": 1.1465296857059002
+    },
+    {
+      "step": 100,
+      "train_loss": 2.9511027336120605,
+      "seconds": 77.02178604099026,
+      "training_tokens": 12800,
+      "active_gb": 0.8200469203293324,
+      "peak_gb": 1.1465296857059002
+    }
+  ],
+  "training_tokens": 12800,
+  "training_seconds": 154.95161004099646,
+  "peak_memory_gb": 1.1465296857059002,
+  "corpus_digest": "946908d2a5bdf931eba932c98ecff3e2b403a8a6ac28dc88b78dcdcdbe5dcf8c",
+  "timestamp": "2026-11-18T17:15:43.656544+00:00",
+  "source_scope": "Selected licensed official coding guidance/source/tests. No generated answers or private files.",
+  "limitation": "Small local held-out text and Python checks, not broad capability proof. Base quantized weights frozen; trained LoRA weights alter effective model weights."
+}

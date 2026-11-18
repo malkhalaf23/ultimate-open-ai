@@ -1,0 +1,11 @@
+# Validation — 2026-11-18
+
+- 26 standard-library tests pass with ResourceWarning treated as an error. Covers source budgets, pause/persistence, source relevance/privacy, arithmetic, adapter acceptance/rejection, restricted Python execution, opt-in contribution capture, sensitive-content screening, deduplication/review, hash-bound owner approval and mocked automatic delivery. Fixtures are synthetic tests only, never training data.
+- Browser verified a complete Python greeting answer with copyable code, accepted training metrics, community sharing disabled without consent, and 390px viewport without horizontal page overflow. Temporary viewport override reset.
+- Actual local MLX QLoRA run accepted: 77,824 parameters, 16 changed tensors, 100 steps, 12,800 tokens. Validation 2.109371 → 2.096664; audit 1.802803 → 1.790877. Python score 7/8 before and after. The merge_intervals task still fails. See TRAINING_REPORT.md and evaluations/coding-weight-update.json.
+- Actual authenticated inference health reported the trained adapter SHA-256: 249d9bc6666911476cab65d0ee7415c9a2cba1c993940e09a13bdfc076f8e9bf. This verifies the active model loaded that artifact, rather than merely saving articles.
+- First corpus: 29 selected files from eight official licensed repositories, split by whole document into 23 train / 3 validation / 3 audit. Commit/hash/license provenance retained; unknown/changed license notices rejected. No community submissions received/trained yet.
+- GitHub lesson submission is tested with mocked transport; no fabricated public contribution was posted. Owner hash approval plus label prevents unreviewed or subsequently edited lessons entering sync. Public-source eligibility and regex screening do not establish truth or guarantee privacy.
+- Daily training and six-hour check-in are configured; future unattended execution has not yet been observed. Mac wake/runtime/scheduler availability is required. Shared release installation trusts the repository owner and checks hash/base revision; receiving users do not independently repeat evaluation.
+
+Small local text/Python checks do not establish broad coding competence, multilingual accuracy, or inevitable improvement. Base weights remain frozen; learned LoRA weights alter effective model weights. Historical scratch-model checkpoints were missing and have not been recovered.

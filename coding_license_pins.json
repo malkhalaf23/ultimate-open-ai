@@ -1,0 +1,10 @@
+{
+ "microsoft/TypeScript":"a5e9f9b1575301c7a7a03508fdaa2e05a918cc17fd21c6e898096a96d6a34f61",
+ "microsoft/vscode":"9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9",
+ "google/styleguide":"e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+ "swiftlang/swift-book":"770af8291f708538d8ff885a0bbc4e045cd700531741c4f99528d435c14d7f55",
+ "react/react":"da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+ "aws/aws-sdk-js-v3":"edea91454b811f127fbdea3d86f378f6719bd372ed440abf82b232f6fca06c3d",
+ "openai/openai-python":"636eb7d79da9bb6d515a4b3fd417aa26679eb3cf16396ddab4bc55fa74e616e4",
+ "golang/go":"911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+}

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env*
+*.sqlite*
+data/
+work/
+*.log
+*-preview.jpg
+*.safetensors
+*.zip
+.venv/
+venv/
+sharing.json
+hub-token.txt
+model-key.txt

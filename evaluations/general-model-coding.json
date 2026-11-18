@@ -1,0 +1,94 @@
+{
+  "passes": 5,
+  "count": 8,
+  "cases": [
+    {
+      "name": "dedupe",
+      "passed": false,
+      "tests": [
+        false,
+        false,
+        false
+      ],
+      "error": null,
+      "code": "def dedupe(items):\n    seen = set()\n    for item in items:\n        if item not in seen:\n            seen.add(item)\n            yield item"
+    },
+    {
+      "name": "is_prime",
+      "passed": true,
+      "tests": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "error": null,
+      "code": "def is_prime(n):\n    if n <= 1:\n        return False\n    if n <= 3:\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i += 6\n    return True"
+    },
+    {
+      "name": "merge_intervals",
+      "passed": false,
+      "tests": [
+        false,
+        true,
+        false
+      ],
+      "error": null,
+      "code": "def merge_intervals(intervals):\n    if not intervals:\n        return []\n    \n    # Sort intervals based on the start time\n    intervals.sort(key=lambda x: x[0])\n    \n    merged = [intervals[0]]\n    \n    for current in intervals[1:]:\n        last = merged[-1]\n        if current[0] <= last[1]:\n            # If the current interval overlaps with the last interval, merge them\n            last[1] = max(last[1], current[1])\n        else:\n            # If there's no overlap, add the current interval to the merged list\n            merged.append(current)\n    \n    return merged"
+    },
+    {
+      "name": "binary_search",
+      "passed": true,
+      "tests": [
+        true,
+        true,
+        true
+      ],
+      "error": null,
+      "code": "def binary_search(values, target):\n    left, right = 0, len(values) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if values[mid] == target:\n            return mid\n        elif values[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+    },
+    {
+      "name": "count_words",
+      "passed": false,
+      "tests": [],
+      "error": "Unsupported statement",
+      "code": "def count_words(text):\n    import re\n    words = re.findall(r'\\b\\w+\\b', text.lower())\n    return dict((word, words.count(word)) for word in words)"
+    },
+    {
+      "name": "chunked",
+      "passed": true,
+      "tests": [
+        true,
+        true,
+        true
+      ],
+      "error": null,
+      "code": "def chunked(items, size):\n    if size <= 0:\n        raise ValueError(\"Size must be greater than 0.\")\n    return [items[i:i+size] for i in range(0, len(items), size)]"
+    },
+    {
+      "name": "balanced_parens",
+      "passed": true,
+      "tests": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "error": null,
+      "code": "def balanced_parens(text):\n    stack = []\n    for char in text:\n        if char in '([{':\n            stack.append(char)\n        elif char in ')]}':\n            if not stack or (char == ')' and stack[-1] != '(') or (char == ']' and stack[-1] != '[') or (char == '}' and stack[-1] != '{'):\n                return False\n            stack.pop()\n    return len(stack) == 0"
+    },
+    {
+      "name": "flatten_once",
+      "passed": true,
+      "tests": [
+        true,
+        true,
+        true
+      ],
+      "error": null,
+      "code": "def flatten_once(items):\n    return [item for sublist in items for item in sublist]"
+    }
+  ],
+  "scope": "Eight small Python acceptance programs in a restricted child, not broad multi-language correctness."
+}
