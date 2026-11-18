@@ -12,7 +12,7 @@ cd ultimate-open-ai
 python3 bootstrap.py
 ```
 
-Open http://127.0.0.1:8877/ or double-click Start Assistant.command after setup. Windows/Linux support is not implemented. New installations initially serve the coding base model and can train their own adapter. The maintainer's tested adapter is available separately under GitHub Releases with its source notices and metrics.
+Open http://127.0.0.1:8877/ or double-click Start Assistant.command after setup. Windows/Linux support is not implemented. New installations initially serve the coding base model and can train their own adapter. With the free GitHub CLI authenticated, run `python3 community.py install-release` to explicitly install the maintainer's tested adapter from GitHub Releases, with its source notices and metrics. This trusts the owner-published release, verifies the adapter hash/exact base revision, and keeps a rollback configuration; it does not independently rerun evaluation on the receiving computer.
 
 ## Actual weight learning
 
